@@ -22,10 +22,15 @@ function createStartBoard() {
     rockLogo.classList.add('rock-animation');
     scissorsLogo.classList.add('scissors-animation');
 }
+window.onload = createStartBoard;
 
 
+const logoPosition = logoSpanOne.getBoundingClientRect();
+let myint = setInterval(() => {
+    const rockPosition = rockLogo.getBoundingClientRect();
+    if ( (rockPosition.x + rockLogo.offsetWidth) > logoPosition.x ) {
+        console.log('pierdolło');
+    } 
+}, 500);
 
 
-//code flow
-//start board handle
-window.onload = createStartBoard();
